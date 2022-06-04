@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Validator;
 
 class FeedbackController extends Controller
 {
+    public array $errorMessage;
+
     /**
      * @param Request $request
      * @return array
@@ -26,9 +28,18 @@ class FeedbackController extends Controller
         );
 
         if ($validator->fails()) {
+            if ($validator->messages()->has('name')) {
+                $errorMessage[] = "Имя должно быть заполнено";
+            }
+            if ($validator->messages()->has('phone')) {
+                $errorMessage[] = "Телефон должен содержать 11 цифр";
+            }
+            if ($validator->messages()->has('text')) {
+                $errorMessage[] = "Сообщение не заполнено";
+            }
             return [
                 "status" => false,
-                "error" => $validator->messages()
+                "error" => $errorMessage
             ];
         }
 

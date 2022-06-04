@@ -2,7 +2,7 @@
 
 namespace App\SaveMethods;
 
-Interface Storage
+interface Storage
 {
     public function save(array $formData): bool;
 }

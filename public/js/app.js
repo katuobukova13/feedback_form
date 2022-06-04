@@ -5305,6 +5305,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "FeedbackForm",
   data: function data() {
@@ -10464,7 +10470,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.response[data-v-182b0d58] {\n    padding-top: 30px;\n    width: 100%;\n    max-width: 350px;\n    margin: 0 auto;\n}\n.response div[data-v-182b0d58] {\n    text-align: center;\n}\n.form[data-v-182b0d58] {\n    width: 100%;\n    max-width: 350px;\n    margin: 0 auto;\n}\n.form__container[data-v-182b0d58] {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    padding: 0 20px;\n    box-sizing: border-box;\n}\n.form__container div[data-v-182b0d58] {\n    padding: 15px 0;\n}\n.form__button[data-v-182b0d58] {\n    box-sizing: border-box;\n    width: 100%;\n}\n.form__container label[data-v-182b0d58],\n.form__container input[data-v-182b0d58],\n.form__container textarea[data-v-182b0d58] {\n    display: block;\n    width: 100%;\n    box-sizing: border-box;\n}\n.form__container label[data-v-182b0d58] {\n    margin-bottom: 5px;\n    font-weight: bold;\n}\n.form__container input[data-v-182b0d58] {\n    padding: 10px 15px;\n    margin-top: 10px;\n}\n.form__container label span[data-v-182b0d58] {\n    color: red;\n}\n.form__container .form__button[data-v-182b0d58] {\n    padding: 15px;\n    margin-top: 10px;\n    background: none;\n    border: none;\n    text-transform: uppercase;\n    color: #fff;\n    font-weight: bold;\n    background-color: #009b97;\n    cursor: pointer;\n    border: 3px #009b97 solid;\n    border-radius: 5px;\n}\n.form__container .form__button[data-v-182b0d58]:hover {\n    color: #009b97;\n    background-color: #fff;\n}\n.form__container textarea[data-v-182b0d58] {\n    min-height: 200px;\n    padding: 10px 15px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.response[data-v-182b0d58] {\n    padding-top: 30px;\n    width: 100%;\n    max-width: 350px;\n    margin: 0 auto;\n}\n.response div[data-v-182b0d58] {\n    text-align: center;\n}\n.form[data-v-182b0d58] {\n    width: 100%;\n    max-width: 350px;\n    margin: 0 auto;\n}\n.form__container[data-v-182b0d58] {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    padding: 0 20px;\n    box-sizing: border-box;\n}\n.form__container div[data-v-182b0d58] {\n    padding: 15px 0;\n}\n.form__button[data-v-182b0d58] {\n    box-sizing: border-box;\n    width: 100%;\n}\n.form__container label[data-v-182b0d58],\n.form__container input[data-v-182b0d58],\n.form__container textarea[data-v-182b0d58] {\n    display: block;\n    width: 100%;\n    box-sizing: border-box;\n}\n.form__container label[data-v-182b0d58] {\n    margin-bottom: 5px;\n    font-weight: bold;\n}\n.form__container input[data-v-182b0d58] {\n    padding: 10px 15px;\n    margin-top: 10px;\n}\n.form__container label span[data-v-182b0d58] {\n    color: red;\n}\n.form__container .form__button[data-v-182b0d58] {\n    padding: 15px;\n    margin-top: 10px;\n    background: none;\n    border: none;\n    text-transform: uppercase;\n    color: #fff;\n    font-weight: bold;\n    background-color: #009b97;\n    cursor: pointer;\n    border: 3px #009b97 solid;\n    border-radius: 5px;\n}\n.form__container .form__button[data-v-182b0d58]:hover {\n    color: #009b97;\n    background-color: #fff;\n}\n.form__container textarea[data-v-182b0d58] {\n    min-height: 200px;\n    padding: 10px 15px;\n}\n.success[data-v-182b0d58] {\n    border: 1px solid #009b97;\n    padding: 20px;\n}\n.error[data-v-182b0d58] {\n    border: 1px solid red;\n    padding: 20px;\n}\n.error__field[data-v-182b0d58] {\n    margin-bottom: 5px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28477,7 +28483,16 @@ var render = function () {
     _vm._v(" "),
     _c("div", { staticClass: "response" }, [
       _vm.error
-        ? _c("div", { staticClass: "error" }, [_vm._v(_vm._s(_vm.message))])
+        ? _c(
+            "div",
+            { staticClass: "error" },
+            _vm._l(_vm.message, function (field) {
+              return _c("div", { key: field.id, staticClass: "error__field" }, [
+                _vm._v(_vm._s(field) + "\n            "),
+              ])
+            }),
+            0
+          )
         : _vm._e(),
       _vm._v(" "),
       _vm.success

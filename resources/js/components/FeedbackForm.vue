@@ -31,7 +31,13 @@
             </div>
         </form>
         <div class="response">
-            <div class="error" v-if="error">{{ message }}</div>
+            <div class="error" v-if="error">
+                <div v-for="field in message"
+                     :key="field.id"
+                     class="error__field"
+                >{{ field }}
+                </div>
+            </div>
             <div class="success" v-if="success">{{ message }}</div>
         </div>
     </div>
@@ -158,5 +164,19 @@ export default {
 .form__container textarea {
     min-height: 200px;
     padding: 10px 15px;
+}
+
+.success {
+    border: 1px solid #009b97;
+    padding: 20px;
+}
+
+.error {
+    border: 1px solid red;
+    padding: 20px;
+}
+
+.error__field {
+    margin-bottom: 5px;
 }
 </style>
